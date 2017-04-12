@@ -3,7 +3,8 @@
 //  GGEasyGCDDemo
 //
 //  Created by gxy on 2017/4/11.
-//  Copyright © 2017年 GaoXinYuan. All rights reserved.
+//  This code is distributed under the terms and conditions of the MIT license.
+//  Copyright © https://github.com/bbloveccgxy/ All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
