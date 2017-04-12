@@ -8,16 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "GGEasyQueue.h"
+#import "GGEasyGroup.h"
 
 typedef void(^GGVoidBlock)();
 
 @interface GGEasyGCD : NSObject
 
-
-
 + (void)async:(dispatch_queue_t)queue with:(GGVoidBlock)block;
 
 + (void)sync:(dispatch_queue_t)queue with:(GGVoidBlock)block;
+
++ (void)apply:(size_t)times in:(dispatch_queue_t)queue with:(GGVoidBlock)block;
+
++ (void)after:(dispatch_time_t)time in:(dispatch_queue_t)queue with:(GGVoidBlock)block;
 
 /**
  Usage: static dispatch_once_t once;

@@ -17,6 +17,5 @@
 + (dispatch_queue_t)customSerialWith:(const char *)identifier;
 + (dispatch_queue_t)customConcurrentWith:(const char *)identifier;
 
-+ (dispatch_group_t)getGroup;
 
 @end

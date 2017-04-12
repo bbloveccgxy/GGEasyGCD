@@ -28,8 +28,6 @@
 + (dispatch_queue_t)customConcurrentWith:(const char *)identifier {
     return dispatch_queue_create(identifier, DISPATCH_QUEUE_CONCURRENT);
 }
-+ (dispatch_group_t)getGroup {
-    return dispatch_group_create();
-}
+
 
 @end

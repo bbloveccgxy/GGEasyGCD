@@ -18,6 +18,13 @@
     dispatch_sync(queue, block);
 }
 
++ (void)apply:(size_t)times in:(dispatch_queue_t)queue with:(GGVoidBlock)block {
+    dispatch_apply(times, queue, block);
+}
+
++ (void)after:(dispatch_time_t)time in:(dispatch_queue_t)queue with:(GGVoidBlock)block {
+    dispatch_after(time, queue, block);
+}
 
 + (void)once:(dispatch_once_t)once with:(GGVoidBlock)block {
     dispatch_once(&once, block);
