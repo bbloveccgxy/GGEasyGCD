@@ -8,11 +8,12 @@
 
 #import "GGEasyGroup.h"
 
-@interface GGEasyGroup ()
+@interface GGEasyGroup () {
+    dispatch_group_t group;
+}
 
 @property (copy, nonatomic) GGVoidBlock notifyBlock;
 
-@property (strong, nonatomic) dispatch_group_t group;
 
 @end
 
@@ -22,7 +23,7 @@
 {
     self = [super init];
     if (self) {
-        _group = dispatch_group_create();
+        group = dispatch_group_create();
     }
     return self;
 }
@@ -36,12 +37,12 @@
 }
 
 - (void)asyncIn:(dispatch_queue_t)queue with:(GGVoidBlock)block {
-    dispatch_group_async(self.group, queue, block);
+    dispatch_group_async(group, queue, block);
 }
 
 - (void)executeNotifyIn:(dispatch_queue_t)queue{
     if (self.notifyBlock != nil) {
-        dispatch_group_notify(self.group, queue, self.notifyBlock);
+        dispatch_group_notify(group, queue, self.notifyBlock);
     }
 }
 
